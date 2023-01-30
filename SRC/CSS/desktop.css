@@ -105,7 +105,7 @@
 }
 
 .header-button:hover {
-    font-weight: 500;
+    color: #46B1DE;
 }
 
 .header-phone-container {
@@ -129,14 +129,41 @@
     text-decoration: none;
 }
 
-.header-phone-text:hover {
-    font-weight: 500;
+.header-phone-container a{
+    position: relative;
+    left: 30px;
+}
+
+.header-phone-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../IMG/phone.svg');
+    background-size: contain;
 }
 
 .header-language {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
+}
+
+.header-language-text-ua {
+    position: relative;
+    left: -5px;
+}
+
+.header-language-text-ua::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 1px;
+    width: 2px;
+    height: 16px;
+    background-color: black;
 }
 
 .header-title-container {
@@ -438,8 +465,6 @@
     color: #46B1DE;
 }
 
-
-
 .main-services-tooth-container {
     width: 100%;
     height: 500px;
@@ -609,9 +634,6 @@
     padding: 10px;
 }
 
-
-
-
 .main-services-attention-container {
     width: 100%;
     display: flex;
@@ -629,8 +651,6 @@
     line-height: 140%;
     color: #46B1DE;
 }
-
-/* T */
 
 .main-make_an_appointment-container {
     padding-top: 87px;
@@ -709,6 +729,8 @@
     justify-content: flex-start;
 }
 
+
+
 .main-make_an_appointment-form-line {
     margin: 0px 10px;
     width: 2px;
@@ -728,6 +750,11 @@
     line-height: 140%;
     text-align: center;
     color: rgba(27, 29, 31, 0.51);
+}
+
+.main-make_an_appointment-form-container *:focus {
+    outline: 2px solid #46B1DE;
+    border-radius: 8px;
 }
 
 .main-make_an_appointment-form-phone-box {
@@ -831,10 +858,45 @@
     padding-bottom: 20px;
     text-decoration: none;
     color: #0F2C4B;
+    transition: 0.5s;
+}
+
+.footer-button-text-left:hover {
+    color: white;
 }
 
 .footer-right-title-box {
     padding-top: 30px;
+}
+
+.footer-language-ua:hover,.footer-language-en:hover {
+    color: white;
+}
+
+.footer-language-ua {
+    position: relative;
+    left: -5px;
+    transition: 0.5s;
+}
+
+.footer-language-en {
+    transition: 0.5s;
+}
+
+.footer-language-text {
+    position: relative;
+    left: 5px;
+    
+}
+
+.footer-language-ua::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 3px;
+    width: 2px;
+    height: 14px;
+    background-color: black;
 }
 
 /* Second-box */
@@ -867,23 +929,43 @@
     color: white;
 }
 
-.footer-button-phone p:hover {
-    color: rgb(174, 174, 174);
-}
-
-.footer-button-phone p:active {
-    color: rgb(86, 86, 86);
-}
-
-
 .footer-phone-text {
     display: grid;
     align-self: center;
     padding-left: 10px;
+    position: relative;
+    left: 25px;
+}
+
+.footer-phone-text::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -27px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../F-IMG/phone.png');
+    background-size: contain;
+}
+
+.footer-phone-text::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 8%;
+    width: 92%;
+    height: 2px;
+    background-color: white;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.footer-phone-text:hover::after {
+    opacity: 1;
 }
 
 .footer-social-media-buttons {
-    padding-top: 10px;
+    padding-top: 15px;
     display: flex;
 }
 
@@ -893,22 +975,44 @@
 
 .footer-instagram-button {
     text-decoration: none;
-    padding-top: 10px;
+    padding-top: 5px;
     display: flex;
-    color: white;
-}
-
-.footer-instagram-button p:hover {
-    color: rgb(174, 174, 174);
-}
-.footer-instagram-button p:active {
-    color: rgb(86, 86, 86);
+    color: #FFFFFF;
 }
 
 .footer-instagram-text {
     display: grid;
     align-self: center;
     padding-left: 10px;
+    position: relative;
+    left: 25px;
+}
+
+.footer-instagram-text::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -27px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../F-IMG/instagram.png');
+    background-size: contain;
+}
+
+.footer-instagram-text::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 15%;
+    width: 85%;
+    height: 2px;
+    background-color: white;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.footer-instagram-text:hover::after {
+    opacity: 1;
 }
 
 .footer-email-button {
@@ -918,17 +1022,39 @@
     color: white;
 }
 
-.footer-email-button p:hover {
-    color: rgb(174, 174, 174);
-}
-.footer-email-button p:active {
-    color: rgb(86, 86, 86);
-}
-
 .footer-email-text {
     display: grid;
     align-self: center;
     padding-left: 10px;
+    padding-top: 6px;
+    position: relative;
+    left: 25px;
+}
+
+.footer-email-text::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    width: 35px;
+    height: 35px;
+    background-image: url('../F-IMG/email.png');
+    background-size: contain;
+}
+
+.footer-email-text::after {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 6%;
+    width: 94%;
+    height: 2px;
+    background-color: white;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.footer-email-text:hover::after {
+    opacity: 1;
 }
 
 .footer-copyright-box {
